@@ -1,3 +1,9 @@
+2013-04-15 - 0.1.0
+* Split the module into its own git repository.
+* Switch to 2-space indent.
+* Clean up README and use markdown.
+* Add $elasticsearch_options variable to support any elasticsearch.yml options.
+
 2012-11-13 - 0.0.1
 * Initial module release.
 

@@ -397,3 +397,10 @@ http.enabled: <%= http_enabled %>
 #monitor.jvm.gc.ConcurrentMarkSweep.warn: 10s
 #monitor.jvm.gc.ConcurrentMarkSweep.info: 5s
 #monitor.jvm.gc.ConcurrentMarkSweep.debug: 2s
+<% if @elasticsearch_options -%>
+
+# Additional options added using the puppet class $elasticsearch_options hash
+<% elasticsearch_options.sort_by {|key,value| key}.each do |key,value| -%>
+<%= key %>: <%= value %>
+<% end -%>
+<% end -%>
