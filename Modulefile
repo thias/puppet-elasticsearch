@@ -5,4 +5,4 @@ author 'Matthias Saou'
 license 'Apache 2.0'
 summary 'Elasticsearch module'
 description "Install, enable and configure Elasticsearch."
-project_page 'https://github.com/thias/puppet-elasticsearch''
+project_page 'https://github.com/thias/puppet-elasticsearch'
