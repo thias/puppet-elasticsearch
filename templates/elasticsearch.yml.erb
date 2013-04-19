@@ -31,7 +31,7 @@
 #
 # cluster.name: elasticsearch
 <% if @cluster_name -%>
-cluster.name: <%= cluster_name %>
+cluster.name: <%= @cluster_name %>
 <% end -%>
 
 
@@ -42,7 +42,7 @@ cluster.name: <%= cluster_name %>
 #
 # node.name: "Franz Kafka"
 <% if @node_name -%>
-node.name: <%= node_name %>
+node.name: <%= @node_name %>
 <% end -%>
 
 # Every node can be configured to allow or deny being eligible as the master,
@@ -52,14 +52,14 @@ node.name: <%= node_name %>
 #
 # node.master: true
 <% if @node_master -%>
-node.master: <%= node_master %>
+node.master: <%= @node_master %>
 <% end -%>
 #
 # Allow this node to store data (enabled by default):
 #
 # node.data: true
 <% if @node_data -%>
-node.data: <%= node_data %>
+node.data: <%= @node_data %>
 <% end -%>
 
 # You can exploit these settings to design advanced cluster topologies.
@@ -94,14 +94,14 @@ node.data: <%= node_data %>
 #
 # node.rack: rack314
 <% if @node_rack -%>
-node.rack: <%= node_rack %>
+node.rack: <%= @node_rack %>
 <% end -%>
 
 # By default, multiple nodes are allowed to start from the same installation location
 # to disable it, set the following:
 # node.max_local_storage_nodes: 1
 <% if @node_max_local_storage_nodes -%>
-node.max_local_storage_node: <%= node_max_local_storage_node %>
+node.max_local_storage_node: <%= @node_max_local_storage_node %>
 <% end -%>
 
 
@@ -218,7 +218,7 @@ node.max_local_storage_node: <%= node_max_local_storage_node %>
 #
 # network.bind_host: 192.168.0.1
 <% if @network_bind_host -%>
-network.bind_host: <%= network_bind_host %>
+network.bind_host: <%= @network_bind_host %>
 <% end -%>
 
 # Set the address other nodes will use to communicate with this node. If not
@@ -226,35 +226,35 @@ network.bind_host: <%= network_bind_host %>
 #
 # network.publish_host: 192.168.0.1
 <% if @network_publish_host -%>
-network.publish_host: <%= network_publish_host %>
+network.publish_host: <%= @network_publish_host %>
 <% end -%>
 
 # Set both 'bind_host' and 'publish_host':
 #
 # network.host: 192.168.0.1
 <% if @network_host -%>
-network.host: <%= network_host %>
+network.host: <%= @network_host %>
 <% end -%>
 
 # Set a custom port for the node to node communication (9300 by default):
 #
 # transport.tcp.port: 9300
 <% if @transport_tcp_port -%>
-transport.tcp.port: <%= transport_tcp_port %>
+transport.tcp.port: <%= @transport_tcp_port %>
 <% end -%>
 
 # Enable compression for all communication between nodes (disabled by default):
 #
 # transport.tcp.compress: true
 <% if @transport_tcp_compress -%>
-transport.tcp.compress: <%= transport_tcp_compress %>
+transport.tcp.compress: <%= @transport_tcp_compress %>
 <% end -%>
 
 # Set a custom port to listen for HTTP traffic:
 #
 # http.port: 9200
 <% if @http_port -%>
-http.port: <%= http_port %>
+http.port: <%= @http_port %>
 <% end -%>
 
 # Set a custom allowed content length:
@@ -265,7 +265,7 @@ http.port: <%= http_port %>
 #
 # http.enabled: false
 <% if @http_enabled -%>
-http.enabled: <%= http_enabled %>
+http.enabled: <%= @http_enabled %>
 <% end -%>
 
 
@@ -400,7 +400,7 @@ http.enabled: <%= http_enabled %>
 <% if @elasticsearch_options -%>
 
 # Additional options added using the puppet class $elasticsearch_options hash
-<% elasticsearch_options.sort_by {|key,value| key}.each do |key,value| -%>
+<% @elasticsearch_options.sort_by {|key,value| key}.each do |key,value| -%>
 <%= key %>: <%= value %>
 <% end -%>
 <% end -%>
