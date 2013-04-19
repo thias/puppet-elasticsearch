@@ -1,5 +1,8 @@
-2013-04-19 - 0.1.1
+2013-04-19 - 0.1.2
 * Use @varname syntax in templates to silence puppet 3.2 warnings.
+
+2013-04-15 - 0.1.1
+* Add examples to README.md.
 
 2013-04-15 - 0.1.0
 * Split the module into its own git repository.
